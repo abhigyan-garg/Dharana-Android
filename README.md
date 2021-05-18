@@ -1,3 +1,3 @@
 # Dharana
 
-![Alt text](Screen Recording.gif)
+![Optional Text](../master/Screen Recording.gif)
