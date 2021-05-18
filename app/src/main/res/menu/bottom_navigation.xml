@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/guru"
+        android:icon="@drawable/ic_guru"
+        android:title="Guru Mantra" />
+    <item
+        android:id="@+id/kriya"
+        android:icon="@drawable/ic_kriya"
+        android:title="Kriya" />
+    <item
+        android:id="@+id/chakra"
+        android:icon="@drawable/ic_chakra"
+        android:title="Chakra Dharana" />
+</menu>

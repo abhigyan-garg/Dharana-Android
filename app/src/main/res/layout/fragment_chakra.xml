@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/chakraFragmentLayout"
+    tools:context=".ChakraFragment">
+    <com.example.dharana.CropImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/ic_chakra_background_male"
+        android:id="@+id/background"
+        android:scaleType="matrix" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lightsLayout">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/white_light"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/whiteLight"
+            android:layout_centerHorizontal="true" />
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/indigo_light"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/indigoLight"
+            android:layout_centerHorizontal="true" />
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/blue_light"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/blueLight"
+            android:layout_centerHorizontal="true" />
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/red_light"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/redLight"
+            android:layout_centerHorizontal="true" />
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/silver_light"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/silverLight"
+            android:layout_centerHorizontal="true" />
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/gold_light"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/goldLight"
+            android:layout_centerHorizontal="true" />
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/multi_color_light"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/multiColorLight"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/buttonsLayout">
+        <Button
+            android:layout_width="110dp"
+            android:layout_height="45dp"
+            android:text="Start"
+            android:background="@drawable/start_button"
+            android:textSize="20sp"
+            android:textColor="#D0FFFFFF"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/startButton" />
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_toLeftOf="@+id/settingsButton"
+            android:background="@drawable/ic_man"
+            android:id="@+id/genderButton"
+            android:layout_centerVertical="true"
+            android:backgroundTint= "@drawable/image_button"
+            android:layout_marginRight="10dp"
+            />
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_toLeftOf="@+id/musicButton"
+            android:background="@drawable/ic_settings"
+            android:id="@+id/settingsButton"
+            android:layout_centerVertical="true"
+            android:backgroundTint= "@drawable/image_button"
+            android:layout_marginRight="10dp"
+            />
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/musicButton"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:backgroundTint="@drawable/image_button"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/ic_music"/>
+    </RelativeLayout>
+</RelativeLayout>

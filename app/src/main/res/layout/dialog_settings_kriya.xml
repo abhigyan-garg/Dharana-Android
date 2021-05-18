@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical" >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Up Time: "
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:textSize="18sp" />
+            <EditText
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:id="@+id/upField"
+                android:text="10"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/upSeconds"
+                android:textSize="18sp"/>
+            <TextView
+                android:id="@+id/upSeconds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="seconds"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:textSize="18sp"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Top Hold Time:"
+                android:layout_weight="1"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:textSize="18sp" />
+            <EditText
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:id="@+id/topHoldField"
+                android:text="5"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/topHoldSeconds"
+                android:textSize="18sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="seconds"
+                android:id="@+id/topHoldSeconds"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:textSize="18sp"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Down Time:"
+                android:layout_weight="1"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:textSize="18sp" />
+            <EditText
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:id="@+id/downField"
+                android:text="10"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/downSeconds"
+                android:textSize="18sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="seconds"
+                android:id="@+id/downSeconds"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:textSize="18sp"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bottom \nHold Time:"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:lines="2"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:textSize="18sp" />
+            <EditText
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:id="@+id/bottomHoldField"
+                android:text="5"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/bottomHoldSeconds"
+                android:textSize="18sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="seconds"
+                android:id="@+id/bottomHoldSeconds"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:textSize="18sp"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cancel"
+            android:textSize="16sp"
+            android:id="@+id/cancelButton"
+            android:layout_gravity="center" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Set"
+            android:textSize="16sp"
+            android:id="@+id/setButton"
+            android:layout_gravity="center" />
+    </LinearLayout>
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Reset"
+        android:textSize="16sp"
+        android:id="@+id/resetButton"
+        android:layout_gravity="center" />
+
+</LinearLayout>
