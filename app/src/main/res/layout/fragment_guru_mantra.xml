@@ -25,26 +25,26 @@
             android:layout_toStartOf="@id/genderButton"
             android:layout_centerVertical="true"
             android:backgroundTint="@drawable/image_button"
-            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp"
             android:background="@drawable/ic_logout"/>
         <ImageButton
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_toLeftOf="@+id/musicButton"
+            android:layout_toStartOf="@+id/musicButton"
             android:background="@drawable/ic_man"
             android:id="@+id/genderButton"
             android:layout_centerVertical="true"
             android:backgroundTint= "@drawable/image_button"
-            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp"
             />
         <ImageButton
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:id="@+id/musicButton"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:backgroundTint="@drawable/image_button"
-            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp"
             android:background="@drawable/ic_music"/>
     </RelativeLayout>
 </RelativeLayout>
