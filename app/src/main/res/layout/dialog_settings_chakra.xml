@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="300dp"
+    android:layout_width="330dp"
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
     android:layout_height="wrap_content"
@@ -14,56 +14,65 @@
         android:orientation="vertical">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="All Chakras:"
-                android:layout_centerVertical="true"
                 android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:text="Hold Time\n(All Chakras Lit):"
                 android:textSize="18sp" />
-            <EditText
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:id="@+id/allField"
-                android:text="2"
-                android:gravity="center"
-                android:layout_centerVertical="true"
-                android:layout_toLeftOf="@+id/allSeconds"
-                android:textSize="18sp"/>
-            <TextView
-                android:id="@+id/allSeconds"
+
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="seconds"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:textSize="18sp"/>
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true">
+                <EditText
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:id="@+id/allField"
+                    android:text="2"
+                    android:gravity="center"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:id="@+id/allSeconds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="seconds"
+                    android:layout_toEndOf="@+id/allField"
+                    android:layout_centerVertical="true"
+                    android:textSize="18sp" />
+            </RelativeLayout>
         </RelativeLayout>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sahasrara:"
-                android:layout_weight="1"
-                android:layout_centerVertical="true"
                 android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:text="Sahasrara:"
                 android:textSize="18sp" />
+
             <EditText
+                android:id="@+id/sahasraraField"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:id="@+id/sahasraraField"
-                android:text="2"
-                android:gravity="center"
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/sahasraraSeconds"
-                android:textSize="18sp"/>
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:text="2"
+                android:textSize="18sp" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
