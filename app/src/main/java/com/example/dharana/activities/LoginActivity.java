@@ -1,18 +1,17 @@
-package com.example.dharana;
+package com.example.dharana.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.ViewCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.dharana.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthInvalidUserException;
@@ -49,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
                                 startActivity(mainIntent);
                                 finish();
                                 return;
-                            } else if (user.getUid().equals("mRw0elfH1HaIQlDjjNFanHnHYGN2")) {
+                            } else if (user.getUid().equals("mRw0elfH1HaIQlDjjNFanHnHYGN2") || user.getUid().equals("sZPmDzVBmbQkqJhvuZOf6Ortvov1")) {
                                 Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
                                 startActivity(mainIntent);
                                 finish();

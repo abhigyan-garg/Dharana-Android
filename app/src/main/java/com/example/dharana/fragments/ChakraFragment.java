@@ -1,4 +1,4 @@
-package com.example.dharana;
+package com.example.dharana.fragments;
 
 import android.graphics.drawable.TransitionDrawable;
 import android.media.AudioAttributes;
@@ -16,6 +16,11 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+
+import com.example.dharana.activities.MainActivity;
+import com.example.dharana.dialogs.ChakraSettingsDialog;
+import com.example.dharana.CropImageView;
+import com.example.dharana.R;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -47,6 +52,7 @@ public class ChakraFragment extends Fragment {
     private Integer activeStream;
     private int volume = 1;
     private boolean man = true;
+    private MainActivity activity;
 
     private String allTime = "15";
     private String sahasraraTime = "15";
@@ -67,7 +73,9 @@ public class ChakraFragment extends Fragment {
     private final float goldHeight = 0.1252645478f;
     private final float width = 0.0571957677f;
 
-    public ChakraFragment() { }
+    public ChakraFragment(MainActivity activity) {
+        this.activity = activity;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -155,6 +163,7 @@ public class ChakraFragment extends Fragment {
 
         startButton.setOnClickListener(v -> {
             if(started) {
+                activity.setMotor(1, false);
                 next = 0;
                 if(runnable != null) {
                     handler.removeCallbacks(runnable);
@@ -173,161 +182,169 @@ public class ChakraFragment extends Fragment {
             }
             else {
                 next = 1;
-                if(Float.valueOf(muladharaTime)>0) {
-                    if (Float.valueOf(muladharaTime) < 1)
-                        ((TransitionDrawable) goldLight.getDrawable()).startTransition(Math.round((Float.valueOf(muladharaTime) * 1000 / 2)));
+                if(Float.parseFloat(muladharaTime)>0) {
+                    activity.setMotor(1, true);
+                    if (Float.parseFloat(muladharaTime) < 1)
+                        ((TransitionDrawable) goldLight.getDrawable()).startTransition(Math.round((Float.parseFloat(muladharaTime) * 1000 / 2)));
                     else
-                        ((TransitionDrawable) goldLight.getDrawable()).startTransition(Math.min(1000, Math.round((Float.valueOf(muladharaTime) * 1000 / 2))));
-                    if (Float.valueOf(muladharaTime) >= 12f / 3f)
-                        activeStream = soundPool.play(lam3x, volume, volume, 1, (int) Math.floor(Double.valueOf(muladharaTime) / 3) - 1, 1);
-                    else if (Float.valueOf(muladharaTime) >= 8f / 3f)
+                        ((TransitionDrawable) goldLight.getDrawable()).startTransition(Math.min(1000, Math.round((Float.parseFloat(muladharaTime) * 1000 / 2))));
+                    if (Float.parseFloat(muladharaTime) >= 12f / 3f)
+                        activeStream = soundPool.play(lam3x, volume, volume, 1, (int) Math.floor(Double.parseDouble(muladharaTime) / 3) - 1, 1);
+                    else if (Float.parseFloat(muladharaTime) >= 8f / 3f)
                         activeStream = soundPool.play(lam2x, volume, volume, 1, 0, 1);
-                    else if (Float.valueOf(muladharaTime) >= 1)
+                    else if (Float.parseFloat(muladharaTime) >= 1)
                         activeStream = soundPool.play(lam1x, volume, volume, 1, 0, 1);
                 }
                 runnable = new Runnable() {
                     public void run() {
                         switch (next) {
                             case 0:
-                                if(Float.valueOf(muladharaTime)>0) {
-                                    if (Float.valueOf(muladharaTime) < 1)
-                                        ((TransitionDrawable) goldLight.getDrawable()).startTransition(Math.round((Float.valueOf(muladharaTime) * 1000 / 2)));
+                                if(Float.parseFloat(muladharaTime)>0) {
+                                    activity.setMotor(next + 1, true);
+                                    if (Float.parseFloat(muladharaTime) < 1)
+                                        ((TransitionDrawable) goldLight.getDrawable()).startTransition(Math.round((Float.parseFloat(muladharaTime) * 1000 / 2)));
                                     else
-                                        ((TransitionDrawable) goldLight.getDrawable()).startTransition(Math.min(1000, Math.round((Float.valueOf(muladharaTime) * 1000 / 2))));
-                                    if (Float.valueOf(muladharaTime) >= 12f / 3f)
-                                        activeStream = soundPool.play(lam3x, volume, volume, 1, (int) Math.floor(Double.valueOf(muladharaTime) / 3) - 1, 1);
-                                    else if (Float.valueOf(muladharaTime) >= 8f / 3f)
+                                        ((TransitionDrawable) goldLight.getDrawable()).startTransition(Math.min(1000, Math.round((Float.parseFloat(muladharaTime) * 1000 / 2))));
+                                    if (Float.parseFloat(muladharaTime) >= 12f / 3f)
+                                        activeStream = soundPool.play(lam3x, volume, volume, 1, (int) Math.floor(Double.parseDouble(muladharaTime) / 3) - 1, 1);
+                                    else if (Float.parseFloat(muladharaTime) >= 8f / 3f)
                                         activeStream = soundPool.play(lam2x, volume, volume, 1, 0, 1);
-                                    else if (Float.valueOf(muladharaTime) >= 1)
+                                    else if (Float.parseFloat(muladharaTime) >= 1)
                                         activeStream = soundPool.play(lam1x, volume, volume, 1, 0, 1);
                                 }
                                 next++;
-                                handler.postDelayed(runnable, Math.round(Double.valueOf(muladharaTime)*1000));
+                                handler.postDelayed(runnable, Math.round(Double.parseDouble(muladharaTime)*1000));
                                 break;
                             case 1:
-                                if(Float.valueOf(swadhisthanaTime)>0) {
-                                    if (Float.valueOf(swadhisthanaTime) < 1)
-                                        ((TransitionDrawable) silverLight.getDrawable()).startTransition(Math.round((Float.valueOf(swadhisthanaTime) * 1000 / 2)));
+                                if(Float.parseFloat(swadhisthanaTime)>0) {
+                                    activity.setMotor(next + 1, true);
+                                    if (Float.parseFloat(swadhisthanaTime) < 1)
+                                        ((TransitionDrawable) silverLight.getDrawable()).startTransition(Math.round((Float.parseFloat(swadhisthanaTime) * 1000 / 2)));
                                     else
-                                        ((TransitionDrawable) silverLight.getDrawable()).startTransition(Math.min(1000, Math.round((Float.valueOf(swadhisthanaTime) * 1000 / 2))));
-                                    if (Float.valueOf(swadhisthanaTime) >= 12f / 3f)
-                                        activeStream = soundPool.play(vam3x, volume, volume, 1, (int) Math.floor(Double.valueOf(swadhisthanaTime) / 3) - 1, 1);
-                                    else if (Float.valueOf(swadhisthanaTime) >= 8f / 3f)
+                                        ((TransitionDrawable) silverLight.getDrawable()).startTransition(Math.min(1000, Math.round((Float.parseFloat(swadhisthanaTime) * 1000 / 2))));
+                                    if (Float.parseFloat(swadhisthanaTime) >= 12f / 3f)
+                                        activeStream = soundPool.play(vam3x, volume, volume, 1, (int) Math.floor(Double.parseDouble(swadhisthanaTime) / 3) - 1, 1);
+                                    else if (Float.parseFloat(swadhisthanaTime) >= 8f / 3f)
                                         activeStream = soundPool.play(vam2x, volume, volume, 1, 0, 1);
-                                    else if (Float.valueOf(swadhisthanaTime) >= 1)
+                                    else if (Float.parseFloat(swadhisthanaTime) >= 1)
                                         activeStream = soundPool.play(vam1x, volume, volume, 1, 0, 1);
                                 }
                                 next++;
-                                handler.postDelayed(runnable, Math.round(Double.valueOf(swadhisthanaTime)*1000));
+                                handler.postDelayed(runnable, Math.round(Double.parseDouble(swadhisthanaTime)*1000));
                                 break;
                             case 2:
-                                if(Float.valueOf(manipuraTime)>0) {
-                                    if (Float.valueOf(manipuraTime) < 1)
-                                        ((TransitionDrawable) redLight.getDrawable()).startTransition(Math.round((Float.valueOf(manipuraTime) * 1000 / 2)));
+                                if(Float.parseFloat(manipuraTime)>0) {
+                                    activity.setMotor(next + 1, true);
+                                    if (Float.parseFloat(manipuraTime) < 1)
+                                        ((TransitionDrawable) redLight.getDrawable()).startTransition(Math.round((Float.parseFloat(manipuraTime) * 1000 / 2)));
                                     else
-                                        ((TransitionDrawable) redLight.getDrawable()).startTransition(Math.min(1000, Math.round((Float.valueOf(manipuraTime) * 1000 / 2))));
-                                    if (Float.valueOf(manipuraTime) >= 12f / 3f)
-                                        activeStream = soundPool.play(ram3x, volume, volume, 1, (int) Math.floor(Double.valueOf(manipuraTime) / 3) - 1, 1);
-                                    else if (Float.valueOf(manipuraTime) >= 8f / 3f)
+                                        ((TransitionDrawable) redLight.getDrawable()).startTransition(Math.min(1000, Math.round((Float.parseFloat(manipuraTime) * 1000 / 2))));
+                                    if (Float.parseFloat(manipuraTime) >= 12f / 3f)
+                                        activeStream = soundPool.play(ram3x, volume, volume, 1, (int) Math.floor(Double.parseDouble(manipuraTime) / 3) - 1, 1);
+                                    else if (Float.parseFloat(manipuraTime) >= 8f / 3f)
                                         activeStream = soundPool.play(ram2x, volume, volume, 1, 0, 1);
-                                    else if (Float.valueOf(manipuraTime) >= 1)
+                                    else if (Float.parseFloat(manipuraTime) >= 1)
                                         activeStream = soundPool.play(ram1x, volume, volume, 1, 0, 1);
                                 }
                                 next++;
-                                handler.postDelayed(runnable, Math.round(Double.valueOf(manipuraTime)*1000));
+                                handler.postDelayed(runnable, Math.round(Double.parseDouble(manipuraTime)*1000));
                                 break;
                             case 3:
-                                if(Float.valueOf(anahataTime)>0) {
-                                    if (Float.valueOf(anahataTime) < 1)
-                                        ((TransitionDrawable) blueLight.getDrawable()).startTransition(Math.round((Float.valueOf(anahataTime) * 1000 / 2)));
+                                if(Float.parseFloat(anahataTime)>0) {
+                                    activity.setMotor(next + 1, true);
+                                    if (Float.parseFloat(anahataTime) < 1)
+                                        ((TransitionDrawable) blueLight.getDrawable()).startTransition(Math.round((Float.parseFloat(anahataTime) * 1000 / 2)));
                                     else
-                                        ((TransitionDrawable) blueLight.getDrawable()).startTransition(Math.min(1000, Math.round((Float.valueOf(anahataTime) * 1000 / 2))));
-                                    if (Float.valueOf(anahataTime) >= 12f / 3f)
-                                        activeStream = soundPool.play(yam3x, volume, volume, 1, (int) Math.floor(Double.valueOf(anahataTime) / 3) - 1, 1);
-                                    else if (Float.valueOf(anahataTime) >= 8f / 3f)
+                                        ((TransitionDrawable) blueLight.getDrawable()).startTransition(Math.min(1000, Math.round((Float.parseFloat(anahataTime) * 1000 / 2))));
+                                    if (Float.parseFloat(anahataTime) >= 12f / 3f)
+                                        activeStream = soundPool.play(yam3x, volume, volume, 1, (int) Math.floor(Double.parseDouble(anahataTime) / 3) - 1, 1);
+                                    else if (Float.parseFloat(anahataTime) >= 8f / 3f)
                                         activeStream = soundPool.play(yam2x, volume, volume, 1, 0, 1);
-                                    else if (Float.valueOf(anahataTime) >= 1)
+                                    else if (Float.parseFloat(anahataTime) >= 1)
                                         activeStream = soundPool.play(yam1x, volume, volume, 1, 0, 1);
                                 }
                                 next++;
-                                handler.postDelayed(runnable, Math.round(Double.valueOf(anahataTime)*1000));
+                                handler.postDelayed(runnable, Math.round(Double.parseDouble(anahataTime)*1000));
                                 break;
                             case 4:
-                                if(Float.valueOf(vishuddiTime)>0) {
-                                    if (Float.valueOf(vishuddiTime) < 1)
-                                        ((TransitionDrawable) indigoLight.getDrawable()).startTransition(Math.round((Float.valueOf(vishuddiTime) * 1000 / 2)));
+                                if(Float.parseFloat(vishuddiTime)>0) {
+                                    activity.setMotor(next + 1, true);
+                                    if (Float.parseFloat(vishuddiTime) < 1)
+                                        ((TransitionDrawable) indigoLight.getDrawable()).startTransition(Math.round((Float.parseFloat(vishuddiTime) * 1000 / 2)));
                                     else
-                                        ((TransitionDrawable) indigoLight.getDrawable()).startTransition(Math.min(1000, Math.round((Float.valueOf(vishuddiTime) * 1000 / 2))));
-                                    if (Float.valueOf(vishuddiTime) >= 12f / 3f)
-                                        activeStream = soundPool.play(ham3x, volume, volume, 1, (int) Math.floor(Double.valueOf(vishuddiTime) / 3) - 1, 1);
-                                    else if (Float.valueOf(vishuddiTime) >= 8f / 3f)
+                                        ((TransitionDrawable) indigoLight.getDrawable()).startTransition(Math.min(1000, Math.round((Float.parseFloat(vishuddiTime) * 1000 / 2))));
+                                    if (Float.parseFloat(vishuddiTime) >= 12f / 3f)
+                                        activeStream = soundPool.play(ham3x, volume, volume, 1, (int) Math.floor(Double.parseDouble(vishuddiTime) / 3) - 1, 1);
+                                    else if (Float.parseFloat(vishuddiTime) >= 8f / 3f)
                                         activeStream = soundPool.play(ham2x, volume, volume, 1, 0, 1);
-                                    else if (Float.valueOf(vishuddiTime) >= 1)
+                                    else if (Float.parseFloat(vishuddiTime) >= 1)
                                         activeStream = soundPool.play(ham1x, volume, volume, 1, 0, 1);
                                 }
                                 next++;
-                                handler.postDelayed(runnable, Math.round(Double.valueOf(vishuddiTime)*1000));
+                                handler.postDelayed(runnable, Math.round(Double.parseDouble(vishuddiTime)*1000));
                                 break;
                             case 5:
-                                if(Float.valueOf(ajnaTime)>0) {
-                                    if (Float.valueOf(ajnaTime) < 1)
-                                        ((TransitionDrawable) whiteLight.getDrawable()).startTransition(Math.round((Float.valueOf(ajnaTime) * 1000 / 2)));
+                                if(Float.parseFloat(ajnaTime)>0) {
+                                    activity.setMotor(next + 1, true);
+                                    if (Float.parseFloat(ajnaTime) < 1)
+                                        ((TransitionDrawable) whiteLight.getDrawable()).startTransition(Math.round((Float.parseFloat(ajnaTime) * 1000 / 2)));
                                     else
-                                        ((TransitionDrawable) whiteLight.getDrawable()).startTransition(Math.min(1000, Math.round((Float.valueOf(ajnaTime) * 1000 / 2))));
-                                    if (Float.valueOf(ajnaTime) >= 12f / 3f)
-                                        activeStream = soundPool.play(om3x, volume, volume, 1, (int) Math.floor(Double.valueOf(ajnaTime) / 3) - 1, 1);
-                                    else if (Float.valueOf(ajnaTime) >= 8f / 3f)
+                                        ((TransitionDrawable) whiteLight.getDrawable()).startTransition(Math.min(1000, Math.round((Float.parseFloat(ajnaTime) * 1000 / 2))));
+                                    if (Float.parseFloat(ajnaTime) >= 12f / 3f)
+                                        activeStream = soundPool.play(om3x, volume, volume, 1, (int) Math.floor(Double.parseDouble(ajnaTime) / 3) - 1, 1);
+                                    else if (Float.parseFloat(ajnaTime) >= 8f / 3f)
                                         activeStream = soundPool.play(om2x, volume, volume, 1, 0, 1);
-                                    else if (Float.valueOf(ajnaTime) >= 1)
+                                    else if (Float.parseFloat(ajnaTime) >= 1)
                                         activeStream = soundPool.play(om1x, volume, volume, 1, 0, 1);
                                 }
                                 next++;
-                                handler.postDelayed(runnable, Math.round(Double.valueOf(ajnaTime)*1000));
+                                handler.postDelayed(runnable, Math.round(Double.parseDouble(ajnaTime)*1000));
                                 break;
                             case 6:
-                                float f = Float.valueOf(sahasraraTime);
-                                if(Float.valueOf(sahasraraTime)>0) {
-                                    if (Float.valueOf(sahasraraTime) < 1)
-                                        ((TransitionDrawable) multiColorLight.getDrawable()).startTransition(Math.round((Float.valueOf(sahasraraTime) * 1000 / 2)));
+                                if(Float.parseFloat(sahasraraTime)>0) {
+                                    activity.setMotor(next + 1, true);
+                                    if (Float.parseFloat(sahasraraTime) < 1)
+                                        ((TransitionDrawable) multiColorLight.getDrawable()).startTransition(Math.round((Float.parseFloat(sahasraraTime) * 1000 / 2)));
                                     else
-                                        ((TransitionDrawable) multiColorLight.getDrawable()).startTransition(Math.min(1000, Math.round((Float.valueOf(sahasraraTime) * 1000 / 2))));
-                                    if (Float.valueOf(sahasraraTime) >= 12f / 3f)
-                                        activeStream = soundPool.play(om3x, volume, volume, 1, (int) Math.floor(Double.valueOf(sahasraraTime) / 3) - 1, 1);
-                                    else if (Float.valueOf(sahasraraTime) >= 8f / 3f)
+                                        ((TransitionDrawable) multiColorLight.getDrawable()).startTransition(Math.min(1000, Math.round((Float.parseFloat(sahasraraTime) * 1000 / 2))));
+                                    if (Float.parseFloat(sahasraraTime) >= 12f / 3f)
+                                        activeStream = soundPool.play(om3x, volume, volume, 1, (int) Math.floor(Double.parseDouble(sahasraraTime) / 3) - 1, 1);
+                                    else if (Float.parseFloat(sahasraraTime) >= 8f / 3f)
                                         activeStream = soundPool.play(om2x, volume, volume, 1, 0, 1);
-                                    else if (Float.valueOf(sahasraraTime) >= 1)
+                                    else if (Float.parseFloat(sahasraraTime) >= 1)
                                         activeStream = soundPool.play(om1x, volume, volume, 1, 0, 1);
                                 }
                                 next++;
-                                handler.postDelayed(runnable, Math.round(Double.valueOf(sahasraraTime)*1000));
+                                handler.postDelayed(runnable, Math.round(Double.parseDouble(sahasraraTime)*1000));
                                 break;
                             case 7:
+                                activity.setMotor(7, false);
                                 next++;
-                                handler.postDelayed(runnable, Math.round(Double.valueOf(allTime)*1000));
+                                handler.postDelayed(runnable, Math.round(Double.parseDouble(allTime)*1000));
                                 break;
                             case 8:
                                 next = 0;
                                 float max = Collections.max(Arrays.asList(new Float[]{Float.valueOf(sahasraraTime), Float.valueOf(ajnaTime), Float.valueOf(vishuddiTime), Float.valueOf(anahataTime), Float.valueOf(manipuraTime), Float.valueOf(swadhisthanaTime), Float.valueOf(muladharaTime)}));
                                 int reverseTime = Math.round(Math.min(max*1000, 1250f));
-                                if(Float.valueOf(sahasraraTime)>0)
+                                if(Float.parseFloat(sahasraraTime)>0)
                                     ((TransitionDrawable)multiColorLight.getDrawable()).reverseTransition(Math.round(reverseTime*3/5));
-                                if(Float.valueOf(ajnaTime)>0)
+                                if(Float.parseFloat(ajnaTime)>0)
                                     ((TransitionDrawable)whiteLight.getDrawable()).reverseTransition(Math.round(reverseTime*3/5));
-                                if(Float.valueOf(vishuddiTime)>0)
+                                if(Float.parseFloat(vishuddiTime)>0)
                                     ((TransitionDrawable)indigoLight.getDrawable()).reverseTransition(Math.round(reverseTime*3/5));
-                                if(Float.valueOf(anahataTime)>0)
+                                if(Float.parseFloat(anahataTime)>0)
                                     ((TransitionDrawable)blueLight.getDrawable()).reverseTransition(Math.round(reverseTime*3/5));
-                                if(Float.valueOf(manipuraTime)>0)
+                                if(Float.parseFloat(manipuraTime)>0)
                                     ((TransitionDrawable)redLight.getDrawable()).reverseTransition(Math.round(reverseTime*3/5));
-                                if(Float.valueOf(swadhisthanaTime)>0)
+                                if(Float.parseFloat(swadhisthanaTime)>0)
                                     ((TransitionDrawable)silverLight.getDrawable()).reverseTransition(Math.round(reverseTime*3/5));
-                                if(Float.valueOf(muladharaTime)>0)
+                                if(Float.parseFloat(muladharaTime)>0)
                                     ((TransitionDrawable)goldLight.getDrawable()).reverseTransition(Math.round(reverseTime*3/5));
                                 handler.postDelayed(runnable, reverseTime);
                         }
                     }
                 };
-                handler.postDelayed(runnable, Math.round(Double.valueOf(muladharaTime)*1000));
+                handler.postDelayed(runnable, Math.round(Double.parseDouble(muladharaTime)*1000));
                 startButton.setText("Stop");
                 started = true;
             }
@@ -339,19 +356,16 @@ public class ChakraFragment extends Fragment {
             chakraSettingsDialog.show();
         });
 
-        genderButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(man) {
-                    background.setImageResource(R.drawable.ic_chakra_background_female);
-                    genderButton.setBackgroundResource(R.drawable.ic_woman);
-                    man = false;
-                }
-                else {
-                    background.setImageResource(R.drawable.ic_chakra_background_male);
-                    genderButton.setBackgroundResource(R.drawable.ic_man);
-                    man = true;
-                }
+        genderButton.setOnClickListener(view1 -> {
+            if(man) {
+                background.setImageResource(R.drawable.ic_chakra_background_female);
+                genderButton.setBackgroundResource(R.drawable.ic_woman);
+                man = false;
+            }
+            else {
+                background.setImageResource(R.drawable.ic_chakra_background_male);
+                genderButton.setBackgroundResource(R.drawable.ic_man);
+                man = true;
             }
         });
         return view;

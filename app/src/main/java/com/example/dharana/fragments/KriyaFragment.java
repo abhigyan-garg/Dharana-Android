@@ -1,4 +1,4 @@
-package com.example.dharana;
+package com.example.dharana.fragments;
 
 import android.animation.Animator;
 import android.os.Bundle;
@@ -15,6 +15,11 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+
+import com.example.dharana.CropImageView;
+import com.example.dharana.dialogs.KriyaSettingsDialog;
+import com.example.dharana.PerfectLoopMediaPlayer;
+import com.example.dharana.R;
 
 
 public class KriyaFragment extends Fragment {
@@ -108,7 +113,7 @@ public class KriyaFragment extends Fragment {
                 }
                 else {
                     cancelled = false;
-                    animation = star.animate().translationY(-rise).setDuration(Math.round(Float.valueOf(upTime)*1000)).setListener(new Animator.AnimatorListener() {
+                    animation = star.animate().translationY(-rise).setDuration(Math.round(Float.parseFloat(upTime)*1000)).setListener(new Animator.AnimatorListener() {
                         @Override
                         public void onAnimationStart(Animator animator) {
 
@@ -123,20 +128,20 @@ public class KriyaFragment extends Fragment {
                                     runnable = new Runnable() {
                                         @Override
                                         public void run() {
-                                            animation = star.animate().translationY(0).setDuration(Math.round(Float.valueOf(downTime) * 1000));
+                                            animation = star.animate().translationY(0).setDuration(Math.round(Float.parseFloat(downTime) * 1000));
                                             rising = false;
                                         }
                                     };
-                                    handler.postDelayed(runnable, Math.round(Float.valueOf(topHoldTime) * 1000));
+                                    handler.postDelayed(runnable, Math.round(Float.parseFloat(topHoldTime) * 1000));
                                 } else {
                                     runnable = new Runnable() {
                                         @Override
                                         public void run() {
-                                            animation = star.animate().translationY(-rise).setDuration(Math.round(Float.valueOf(upTime) * 1000));
+                                            animation = star.animate().translationY(-rise).setDuration(Math.round(Float.parseFloat(upTime) * 1000));
                                             rising = true;
                                         }
                                     };
-                                    handler.postDelayed(runnable, Math.round(Float.valueOf(bottomHoldTime) * 1000));
+                                    handler.postDelayed(runnable, Math.round(Float.parseFloat(bottomHoldTime) * 1000));
                                 }
                             }
                         }

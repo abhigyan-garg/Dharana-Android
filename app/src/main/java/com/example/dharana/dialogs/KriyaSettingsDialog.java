@@ -1,4 +1,4 @@
-package com.example.dharana;
+package com.example.dharana.dialogs;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -8,6 +8,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+
+import com.example.dharana.DecimalPlaceFilter;
+import com.example.dharana.R;
+import com.example.dharana.fragments.KriyaFragment;
 
 public class KriyaSettingsDialog extends Dialog {
     private EditText upField;

@@ -1,15 +1,17 @@
-package com.example.dharana;
+package com.example.dharana.dialogs;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.graphics.Color;
 import android.text.InputFilter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+
+import com.example.dharana.DecimalPlaceFilter;
+import com.example.dharana.R;
+import com.example.dharana.fragments.ChakraFragment;
 
 public class ChakraSettingsDialog extends Dialog {
     private EditText allField;

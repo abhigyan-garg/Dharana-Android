@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/guruMantraFragmentLayout"
-    tools:context=".GuruMantraFragment">
+    tools:context=".fragments.GuruMantraFragment">
     <com.example.dharana.CropImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -22,7 +22,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:id="@+id/logoutButton"
-            android:layout_toLeftOf="@id/genderButton"
+            android:layout_toStartOf="@id/genderButton"
             android:layout_centerVertical="true"
             android:backgroundTint="@drawable/image_button"
             android:layout_marginRight="10dp"

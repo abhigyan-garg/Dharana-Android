@@ -11,6 +11,9 @@ import androidx.annotation.AttrRes;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageView;
 
+import com.example.dharana.fragments.ChakraFragment;
+import com.example.dharana.fragments.KriyaFragment;
+
 public class CropImageView extends AppCompatImageView {
     private static final float DEFAULT_HORIZONTAL_OFFSET = 0.5f;
     private static final float DEFAULT_VERTICAL_OFFSET = 1;

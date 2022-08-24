@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".LoginActivity"
+    tools:context=".activities.LoginActivity"
     android:background="@color/black"
     android:orientation="vertical">
     <com.example.dharana.SquareImageView
@@ -17,31 +17,35 @@
         android:layout_marginTop="25dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email"
+        android:hint="@string/email"
         android:textColorHint="#90FFFFFF"
         android:textColor="#FFFFFF"
+        android:textSize="20sp"
         android:id="@+id/emailField"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:autofillHints="emailAddress"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Password"
+        android:hint="@string/password"
         android:textColorHint="#90FFFFFF"
         android:textColor="#FFFFFF"
+        android:textSize="20sp"
         android:id="@+id/passwordField"
-        android:inputType="textPassword"/>
+        android:inputType="textPassword"
+        android:autofillHints="password"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="#FFFFFF"
         android:backgroundTint="#20FFFFFF"
-        android:text="login"
+        android:text="@string/login"
         android:id="@+id/loginButton"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="#FFFFFF"
         android:backgroundTint="#20FFFFFF"
-        android:text="register"
+        android:text="@string/register"
         android:id="@+id/registrationButton"/>
 </LinearLayout>

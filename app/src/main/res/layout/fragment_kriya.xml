@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/kriyaFragmentLayout"
-    tools:context=".KriyaFragment">
+    tools:context=".fragments.KriyaFragment">
     <com.example.dharana.CropImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
