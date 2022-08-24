@@ -16,12 +16,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Up Time: "
-                android:layout_centerVertical="true"
                 android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="Up Time: "
                 android:textSize="18sp" />
             <EditText
                 android:layout_width="80dp"
@@ -33,25 +34,27 @@
                 android:layout_centerVertical="true"
                 android:layout_toStartOf="@+id/upSeconds"
                 android:textSize="18sp"/>
+
             <TextView
                 android:id="@+id/upSeconds"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="seconds"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:textSize="18sp"/>
+                android:text="@string/seconds"
+                android:textSize="18sp" />
         </RelativeLayout>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Top Hold Time:"
-                android:layout_centerVertical="true"
                 android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="Top Hold Time:"
                 android:textSize="18sp" />
             <EditText
                 android:layout_width="80dp"
@@ -63,14 +66,15 @@
                 android:layout_centerVertical="true"
                 android:layout_toStartOf="@+id/topHoldSeconds"
                 android:textSize="18sp"/>
+
             <TextView
+                android:id="@+id/topHoldSeconds"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="seconds"
-                android:id="@+id/topHoldSeconds"
-                android:layout_centerVertical="true"
                 android:layout_alignParentEnd="true"
-                android:textSize="18sp"/>
+                android:layout_centerVertical="true"
+                android:text="@string/seconds"
+                android:textSize="18sp" />
         </RelativeLayout>
         <RelativeLayout
             android:layout_width="match_parent"
@@ -96,7 +100,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="seconds"
+                android:text="@string/seconds"
                 android:id="@+id/downSeconds"
                 android:layout_centerVertical="true"
                 android:layout_alignParentEnd="true"
@@ -125,14 +129,14 @@
                 android:layout_centerVertical="true"
                 android:layout_toStartOf="@+id/bottomHoldSeconds"
                 android:textSize="18sp"/>
+
             <TextView
+                android:id="@+id/bottomHoldSeconds"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="seconds"
-                android:id="@+id/bottomHoldSeconds"
-                android:layout_centerVertical="true"
                 android:layout_alignParentEnd="true"
-                android:textSize="18sp"/>
+                android:text="@string/seconds"
+                android:textSize="18sp" />
         </RelativeLayout>
     </LinearLayout>
 
@@ -144,7 +148,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Cancel"
+            android:text="@string/cancel"
             android:textSize="16sp"
             android:id="@+id/cancelButton"
             android:layout_gravity="center" />
@@ -153,7 +157,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Set"
+            android:text="@string/set"
             android:textSize="16sp"
             android:id="@+id/setButton"
             android:layout_gravity="center" />
@@ -161,7 +165,7 @@
     <Button
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="Reset"
+        android:text="@string/reset"
         android:textSize="16sp"
         android:id="@+id/resetButton"
         android:layout_gravity="center" />

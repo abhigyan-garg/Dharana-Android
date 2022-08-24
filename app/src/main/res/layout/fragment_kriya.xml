@@ -21,7 +21,7 @@
         android:id="@+id/star"
         android:visibility="visible"
         android:src="@drawable/ic_star"
-        android:contentDescription="Star"/>
+        android:contentDescription="@string/star"/>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,7 +30,7 @@
         <Button
             android:layout_width="110dp"
             android:layout_height="45dp"
-            android:text="Start"
+            android:text="@string/start"
             android:background="@drawable/start_button"
             android:textSize="20sp"
             android:textColor="#D0FFFFFF"
@@ -47,7 +47,7 @@
             android:layout_centerVertical="true"
             android:backgroundTint= "@drawable/image_button"
             android:layout_marginEnd="10dp"
-            android:contentDescription="Change gender button"/>
+            android:contentDescription="@string/change_gender_button"/>
         <ImageButton
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -57,7 +57,7 @@
             android:layout_centerVertical="true"
             android:backgroundTint= "@drawable/image_button"
             android:layout_marginEnd="10dp"
-            android:contentDescription="Settings button"/>
+            android:contentDescription="@string/settings_button"/>
         <ImageButton
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -67,6 +67,6 @@
             android:backgroundTint="@drawable/image_button"
             android:layout_marginEnd="10dp"
             android:background="@drawable/ic_music"
-            android:contentDescription="Toggle music button"/>
+            android:contentDescription="@string/toggle_music_button"/>
     </RelativeLayout>
 </RelativeLayout>
