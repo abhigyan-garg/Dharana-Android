@@ -67,14 +67,14 @@ public class ChakraSettingsDialog extends Dialog {
         });
 
         resetButton.setOnClickListener(view -> {
-            allField.setText("15");
-            sahasraraField.setText("15");
-            ajnaField.setText("15");
-            vishuddiField.setText("15");
-            anahataField.setText("15");
-            manipuraField.setText("15");
-            swadhisthanaField.setText("15");
-            muladharaField.setText("15");
+            allField.setText("2");
+            sahasraraField.setText("2");
+            ajnaField.setText("2");
+            vishuddiField.setText("2");
+            anahataField.setText("2");
+            manipuraField.setText("2");
+            swadhisthanaField.setText("2");
+            muladharaField.setText("2");
         });
 
         setButton.setOnClickListener(view -> {

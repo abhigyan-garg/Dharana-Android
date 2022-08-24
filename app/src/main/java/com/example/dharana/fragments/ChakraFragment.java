@@ -54,14 +54,14 @@ public class ChakraFragment extends Fragment {
     private boolean man = true;
     private MainActivity activity;
 
-    private String allTime = "15";
-    private String sahasraraTime = "15";
-    private String ajnaTime = "15";
-    private String vishuddiTime = "15";
-    private String anahataTime = "15";
-    private String manipuraTime = "15";
-    private String swadhisthanaTime = "15";
-    private String muladharaTime = "15";
+    private String allTime = "2";
+    private String sahasraraTime = "2";
+    private String ajnaTime = "2";
+    private String vishuddiTime = "2";
+    private String anahataTime = "2";
+    private String manipuraTime = "2";
+    private String swadhisthanaTime = "2";
+    private String muladharaTime = "2";
     private int next = 0;
 
     private final float multiColorHeight = 0.6347777754f;
