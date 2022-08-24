@@ -22,49 +22,56 @@
             android:src="@drawable/white_light"
             android:layout_alignParentBottom="true"
             android:id="@+id/whiteLight"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:contentDescription="Muladhara"/>
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/indigo_light"
             android:layout_alignParentBottom="true"
             android:id="@+id/indigoLight"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:contentDescription="Swadhisthana"/>
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/blue_light"
             android:layout_alignParentBottom="true"
             android:id="@+id/blueLight"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:contentDescription="Manipura"/>
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/red_light"
             android:layout_alignParentBottom="true"
             android:id="@+id/redLight"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:contentDescription="Anahata"/>
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/silver_light"
             android:layout_alignParentBottom="true"
             android:id="@+id/silverLight"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:contentDescription="Vishuddi"/>
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/gold_light"
             android:layout_alignParentBottom="true"
             android:id="@+id/goldLight"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:contentDescription="Ajna"/>
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/multi_color_light"
             android:layout_alignParentBottom="true"
             android:id="@+id/multiColorLight"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:contentDescription="Sahasrara"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -92,7 +99,7 @@
             android:layout_centerVertical="true"
             android:backgroundTint= "@drawable/image_button"
             android:layout_marginEnd="10dp"
-            />
+            android:contentDescription="Change gender button"/>
         <ImageButton
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -102,7 +109,7 @@
             android:layout_centerVertical="true"
             android:backgroundTint= "@drawable/image_button"
             android:layout_marginEnd="10dp"
-            />
+            android:contentDescription="Settings button"/>
         <ImageButton
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -111,6 +118,7 @@
             android:layout_centerVertical="true"
             android:backgroundTint="@drawable/image_button"
             android:layout_marginEnd="10dp"
-            android:background="@drawable/ic_music"/>
+            android:background="@drawable/ic_music"
+            android:contentDescription="Toggle music button"/>
     </RelativeLayout>
 </RelativeLayout>

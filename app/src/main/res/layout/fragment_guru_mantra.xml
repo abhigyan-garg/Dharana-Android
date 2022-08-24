@@ -26,7 +26,8 @@
             android:layout_centerVertical="true"
             android:backgroundTint="@drawable/image_button"
             android:layout_marginEnd="10dp"
-            android:background="@drawable/ic_logout"/>
+            android:background="@drawable/ic_logout"
+            android:contentDescription="Logout buttin"/>
         <ImageButton
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -36,7 +37,7 @@
             android:layout_centerVertical="true"
             android:backgroundTint= "@drawable/image_button"
             android:layout_marginEnd="10dp"
-            />
+            android:contentDescription="Change gender button"/>
         <ImageButton
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -45,6 +46,7 @@
             android:layout_centerVertical="true"
             android:backgroundTint="@drawable/image_button"
             android:layout_marginEnd="10dp"
-            android:background="@drawable/ic_music"/>
+            android:background="@drawable/ic_music"
+            android:contentDescription="Toggle music button"/>
     </RelativeLayout>
 </RelativeLayout>

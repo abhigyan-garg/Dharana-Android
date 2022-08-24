@@ -21,7 +21,7 @@
                 android:layout_height="wrap_content"
                 android:text="Up Time: "
                 android:layout_centerVertical="true"
-                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
                 android:textSize="18sp" />
             <EditText
                 android:layout_width="80dp"
@@ -31,14 +31,14 @@
                 android:text="10"
                 android:gravity="center"
                 android:layout_centerVertical="true"
-                android:layout_toLeftOf="@+id/upSeconds"
+                android:layout_toStartOf="@+id/upSeconds"
                 android:textSize="18sp"/>
             <TextView
                 android:id="@+id/upSeconds"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="seconds"
-                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:textSize="18sp"/>
         </RelativeLayout>
@@ -50,9 +50,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Top Hold Time:"
-                android:layout_weight="1"
                 android:layout_centerVertical="true"
-                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
                 android:textSize="18sp" />
             <EditText
                 android:layout_width="80dp"
@@ -62,7 +61,7 @@
                 android:text="5"
                 android:gravity="center"
                 android:layout_centerVertical="true"
-                android:layout_toLeftOf="@+id/topHoldSeconds"
+                android:layout_toStartOf="@+id/topHoldSeconds"
                 android:textSize="18sp"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -70,7 +69,7 @@
                 android:text="seconds"
                 android:id="@+id/topHoldSeconds"
                 android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:textSize="18sp"/>
         </RelativeLayout>
         <RelativeLayout
@@ -81,9 +80,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Down Time:"
-                android:layout_weight="1"
                 android:layout_centerVertical="true"
-                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
                 android:textSize="18sp" />
             <EditText
                 android:layout_width="80dp"
@@ -93,7 +91,7 @@
                 android:text="10"
                 android:gravity="center"
                 android:layout_centerVertical="true"
-                android:layout_toLeftOf="@+id/downSeconds"
+                android:layout_toStartOf="@+id/downSeconds"
                 android:textSize="18sp"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -101,7 +99,7 @@
                 android:text="seconds"
                 android:id="@+id/downSeconds"
                 android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:textSize="18sp"/>
         </RelativeLayout>
         <RelativeLayout
@@ -113,10 +111,9 @@
                 android:layout_height="wrap_content"
                 android:text="Bottom \nHold Time:"
                 android:gravity="center_horizontal"
-                android:layout_weight="1"
                 android:lines="2"
                 android:layout_centerVertical="true"
-                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
                 android:textSize="18sp" />
             <EditText
                 android:layout_width="80dp"
@@ -126,7 +123,7 @@
                 android:text="5"
                 android:gravity="center"
                 android:layout_centerVertical="true"
-                android:layout_toLeftOf="@+id/bottomHoldSeconds"
+                android:layout_toStartOf="@+id/bottomHoldSeconds"
                 android:textSize="18sp"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -134,7 +131,7 @@
                 android:text="seconds"
                 android:id="@+id/bottomHoldSeconds"
                 android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:textSize="18sp"/>
         </RelativeLayout>
     </LinearLayout>
