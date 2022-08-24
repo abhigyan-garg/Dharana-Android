@@ -1,9 +1,7 @@
 package com.example.dharana.activities;
 
 import static android.bluetooth.BluetoothAdapter.STATE_CONNECTED;
-import static android.bluetooth.BluetoothGatt.GATT_INVALID_ATTRIBUTE_LENGTH;
 import static android.bluetooth.BluetoothGatt.GATT_SUCCESS;
-import static android.bluetooth.BluetoothGatt.GATT_WRITE_NOT_PERMITTED;
 import static android.content.pm.PackageManager.PERMISSION_DENIED;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,13 +25,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.example.dharana.dialogs.BluetoothDevicesDialog;
 import com.example.dharana.fragments.ChakraFragment;
@@ -45,7 +41,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;

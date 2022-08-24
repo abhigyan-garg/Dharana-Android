@@ -1,14 +1,8 @@
 package com.example.dharana.dialogs;
 
 import android.app.Dialog;
-import android.bluetooth.BluetoothDevice;
-import android.bluetooth.le.ScanResult;
-import android.os.Handler;
 import android.widget.Button;
 import android.widget.TextView;
-
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dharana.R;
 import com.example.dharana.activities.MainActivity;
