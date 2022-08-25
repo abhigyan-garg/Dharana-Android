@@ -213,7 +213,7 @@ public class KriyaFragment extends Fragment {
         starLayoutParams.width = (int) width;
         starLayoutParams.height = (int) width;
         star.setLayoutParams(starLayoutParams);
-        rise = verticalHeight * (373f/525f - starMargin);
+        rise = verticalHeight * (322f/525f - starMargin);
     }
 
     public void switchedTo() {
