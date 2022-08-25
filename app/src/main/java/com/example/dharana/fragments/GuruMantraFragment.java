@@ -110,7 +110,7 @@ public class GuruMantraFragment extends Fragment {
     public void onResume() {
         super.onResume();
         if(!loaded) {
-            mediaPlayer.play(R.raw.tanpura);
+            mediaPlayer.play(R.raw.guru_matra);
             loaded = true;
         }
     }
