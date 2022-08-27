@@ -12,6 +12,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/modify_times_for_individual_chakras"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/individualToggle"/>
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/individualToggle"/>
+        </RelativeLayout>
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="60dp"
@@ -34,242 +55,292 @@
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:inputType="numberDecimal"
-                    android:id="@+id/allField"
+                    android:id="@+id/holdField"
                     android:text="2"
                     android:gravity="center"
                     android:textSize="18sp"/>
 
                 <TextView
-                    android:id="@+id/allSeconds"
+                    android:id="@+id/holdSeconds"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_toEndOf="@+id/allField"
+                    android:layout_toEndOf="@+id/holdField"
                     android:text="seconds"
                     android:textSize="18sp" />
             </RelativeLayout>
         </RelativeLayout>
-        <RelativeLayout
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:id="@+id/allChakrasLayout">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:text="Sahasrara:"
-                android:textSize="18sp" />
+                android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/sahasraraField"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_toStartOf="@+id/sahasraraSeconds"
-                android:gravity="center"
-                android:inputType="numberDecimal"
-                android:text="2"
-                android:textSize="18sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:text="Chakras:"
+                    android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/sahasraraSeconds"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:text="@string/seconds"
-                android:textSize="18sp" />
-        </RelativeLayout>
-        <RelativeLayout
+                <EditText
+                    android:id="@+id/allField"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/allSeconds"
+                    android:gravity="center"
+                    android:inputType="numberDecimal"
+                    android:text="2"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/allSeconds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/seconds"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ajna:"
-                android:layout_centerVertical="true"
-                android:layout_alignParentStart="true"
-                android:textSize="18sp" />
-            <EditText
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:id="@+id/ajnaField"
-                android:text="2"
-                android:gravity="center"
-                android:layout_centerVertical="true"
-                android:layout_toStartOf="@+id/ajnaSeconds"
-                android:textSize="18sp"/>
+            android:orientation="vertical"
+            android:id="@+id/individualChakrasLayout"
+            android:visibility="gone">
 
-            <TextView
-                android:id="@+id/ajnaSeconds"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:text="@string/seconds"
-                android:textSize="18sp" />
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Vishuddi:"
-                android:layout_centerVertical="true"
-                android:layout_alignParentStart="true"
-                android:textSize="18sp" />
-            <EditText
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:id="@+id/vishuddiField"
-                android:text="2"
-                android:layout_centerVertical="true"
-                android:layout_toStartOf="@+id/vishuddiSeconds"
-                android:gravity="center"
-                android:textSize="18sp"/>
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/vishuddiSeconds"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:text="@string/seconds"
-                android:textSize="18sp" />
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Anahata:"
-                android:layout_centerVertical="true"
-                android:layout_alignParentStart="true"
-                android:textSize="18sp" />
-            <EditText
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:id="@+id/anahataField"
-                android:text="2"
-                android:layout_centerVertical="true"
-                android:layout_toStartOf="@+id/anahataSeconds"
-                android:gravity="center"
-                android:textSize="18sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:text="Sahasrara:"
+                    android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/anahataSeconds"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:text="@string/seconds"
-                android:textSize="18sp" />
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Manipura:"
-                android:layout_centerVertical="true"
-                android:layout_alignParentStart="true"
-                android:textSize="18sp" />
-            <EditText
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:id="@+id/manipuraField"
-                android:text="2"
-                android:layout_centerVertical="true"
-                android:layout_toStartOf="@+id/manipuraSeconds"
-                android:gravity="center"
-                android:textSize="18sp"/>
+                <EditText
+                    android:id="@+id/sahasraraField"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/sahasraraSeconds"
+                    android:gravity="center"
+                    android:inputType="numberDecimal"
+                    android:text="2"
+                    android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/manipuraSeconds"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/sahasraraSeconds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/seconds"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:text="@string/seconds"
-                android:textSize="18sp" />
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Swadhisthana:"
-                android:layout_centerVertical="true"
-                android:layout_alignParentStart="true"
-                android:textSize="18sp" />
-            <EditText
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:id="@+id/swadhisthanaField"
-                android:text="2"
-                android:layout_centerVertical="true"
-                android:layout_toStartOf="@+id/swadhisthanaSeconds"
-                android:gravity="center"
-                android:textSize="18sp"/>
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ajna:"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentStart="true"
+                    android:textSize="18sp" />
+                <EditText
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:id="@+id/ajnaField"
+                    android:text="2"
+                    android:gravity="center"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/ajnaSeconds"
+                    android:textSize="18sp"/>
 
-            <TextView
-                android:id="@+id/swadhisthanaSeconds"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/ajnaSeconds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/seconds"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:text="@string/seconds"
-                android:textSize="18sp" />
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Muladhara:"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:layout_weight="1"
-                android:textSize="18sp" />
-            <EditText
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:id="@+id/muladharaField"
-                android:text="2"
-                android:layout_centerVertical="true"
-                android:layout_toStartOf="@+id/muladharaSeconds"
-                android:gravity="center"
-                android:textSize="18sp"/>
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vishuddi:"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentStart="true"
+                    android:textSize="18sp" />
+                <EditText
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:id="@+id/vishuddiField"
+                    android:text="2"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/vishuddiSeconds"
+                    android:gravity="center"
+                    android:textSize="18sp"/>
 
-            <TextView
-                android:id="@+id/muladharaSeconds"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/vishuddiSeconds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/seconds"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:text="@string/seconds"
-                android:textSize="18sp" />
-        </RelativeLayout>
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Anahata:"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentStart="true"
+                    android:textSize="18sp" />
+                <EditText
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:id="@+id/anahataField"
+                    android:text="2"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/anahataSeconds"
+                    android:gravity="center"
+                    android:textSize="18sp"/>
 
+                <TextView
+                    android:id="@+id/anahataSeconds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/seconds"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Manipura:"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentStart="true"
+                    android:textSize="18sp" />
+                <EditText
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:id="@+id/manipuraField"
+                    android:text="2"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/manipuraSeconds"
+                    android:gravity="center"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:id="@+id/manipuraSeconds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/seconds"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Swadhisthana:"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentStart="true"
+                    android:textSize="18sp" />
+                <EditText
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:id="@+id/swadhisthanaField"
+                    android:text="2"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/swadhisthanaSeconds"
+                    android:gravity="center"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:id="@+id/swadhisthanaSeconds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/seconds"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Muladhara:"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_weight="1"
+                    android:textSize="18sp" />
+                <EditText
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:id="@+id/muladharaField"
+                    android:text="2"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/muladharaSeconds"
+                    android:gravity="center"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:id="@+id/muladharaSeconds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/seconds"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
