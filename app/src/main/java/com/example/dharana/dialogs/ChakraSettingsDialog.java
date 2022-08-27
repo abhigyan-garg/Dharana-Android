@@ -7,7 +7,6 @@ import android.text.InputFilter;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -20,24 +19,24 @@ import com.example.dharana.fragments.ChakraFragment;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
 public class ChakraSettingsDialog extends Dialog {
-    private LinearLayout allChakrasLayout;
-    private LinearLayout individualChakrasLayout;
+    private final LinearLayout allChakrasLayout;
+    private final LinearLayout individualChakrasLayout;
 
-    private EditText holdField;
-    private EditText sahasraraField;
-    private EditText ajnaField;
-    private EditText vishuddiField;
-    private EditText anahataField;
-    private EditText manipuraField;
-    private EditText swadhisthanaField;
-    private EditText muladharaField;
-    private EditText allField;
+    private final EditText holdField;
+    private final EditText sahasraraField;
+    private final EditText ajnaField;
+    private final EditText vishuddiField;
+    private final EditText anahataField;
+    private final EditText manipuraField;
+    private final EditText swadhisthanaField;
+    private final EditText muladharaField;
+    private final EditText allField;
 
-    private Button cancelButton;
-    private Button setButton;
-    private Button resetButton;
+    private final Button cancelButton;
+    private final Button setButton;
+    private final Button resetButton;
 
-    private SwitchMaterial individualToggle;
+    private final SwitchMaterial individualToggle;
 
     private boolean modifyIndividualChakras = false;
 

@@ -8,9 +8,9 @@ import com.example.dharana.R;
 import com.example.dharana.activities.MainActivity;
 
 public class BluetoothDevicesDialog extends Dialog {
-    private TextView promptTextView;
-    private Button cancelButton;
-    private MainActivity activity;
+    private final TextView promptTextView;
+    private final Button cancelButton;
+    private final MainActivity activity;
 
     public BluetoothDevicesDialog(MainActivity activity) {
         super(activity);

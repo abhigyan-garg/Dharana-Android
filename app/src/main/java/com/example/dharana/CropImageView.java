@@ -18,8 +18,8 @@ public class CropImageView extends AppCompatImageView {
     private static final float DEFAULT_HORIZONTAL_OFFSET = 0.5f;
     private static final float DEFAULT_VERTICAL_OFFSET = 1;
 
-    private float mHorizontalOffsetPercent = DEFAULT_HORIZONTAL_OFFSET;
-    private float mVerticalOffsetPercent = DEFAULT_VERTICAL_OFFSET;
+    private final float mHorizontalOffsetPercent = DEFAULT_HORIZONTAL_OFFSET;
+    private final float mVerticalOffsetPercent = DEFAULT_VERTICAL_OFFSET;
 
     private ChakraFragment chakraFragment;
     private KriyaFragment kriyaFragment;

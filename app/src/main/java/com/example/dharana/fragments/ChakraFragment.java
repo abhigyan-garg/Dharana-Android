@@ -45,14 +45,14 @@ public class ChakraFragment extends Fragment {
     private ImageButton musicButton;
     private boolean started = false;
     private boolean topMarginSet = false;
-    private Handler handler = new Handler();
+    private final Handler handler = new Handler();
     private Runnable runnable;
     private SoundPool soundPool;
     private int lam3x, vam3x, ram3x, yam3x, ham3x, om3x, lam2x, vam2x, ram2x, yam2x, ham2x, om2x, lam1x, vam1x, ram1x, yam1x, ham1x, om1x;
     private Integer activeStream;
     private int volume = 1;
     private boolean man = true;
-    private MainActivity activity;
+    private final MainActivity activity;
 
     private String allTime = "2";
     private String sahasraraTime = "2";

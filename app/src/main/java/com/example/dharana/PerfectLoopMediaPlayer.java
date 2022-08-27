@@ -9,7 +9,7 @@ import android.util.Log;
 public class PerfectLoopMediaPlayer {
 
 
-    private Context context;
+    private final Context context;
     private Uri uri;
     private int resourceId;
 
@@ -30,7 +30,7 @@ public class PerfectLoopMediaPlayer {
     private int mediaPlayerIndex = -1;
 
     // 3 media players
-    private MediaPlayer mp[] = new MediaPlayer[3];
+    private final MediaPlayer[] mp = new MediaPlayer[3];
 
     // current volume
     private float vol;
@@ -152,7 +152,7 @@ public class PerfectLoopMediaPlayer {
     /**
      * internal listener which handles looping thing
      */
-    private MediaPlayer.OnCompletionListener completionListener = new OnCompletionListener() {
+    private final MediaPlayer.OnCompletionListener completionListener = new OnCompletionListener() {
 
         @Override
         public void onCompletion(MediaPlayer curmp) {

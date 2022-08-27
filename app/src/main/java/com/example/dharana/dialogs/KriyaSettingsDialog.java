@@ -14,14 +14,14 @@ import com.example.dharana.R;
 import com.example.dharana.fragments.KriyaFragment;
 
 public class KriyaSettingsDialog extends Dialog {
-    private EditText upField;
-    private EditText topHoldField;
-    private EditText downField;
-    private EditText bottomHoldField;
+    private final EditText upField;
+    private final EditText topHoldField;
+    private final EditText downField;
+    private final EditText bottomHoldField;
 
-    private Button cancelButton;
-    private Button setButton;
-    private Button resetButton;
+    private final Button cancelButton;
+    private final Button setButton;
+    private final Button resetButton;
 
     public KriyaSettingsDialog(@NonNull Context context, KriyaFragment kriyaFragment) {
         super(context);
