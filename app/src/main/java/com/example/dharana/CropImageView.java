@@ -93,8 +93,8 @@ public class CropImageView extends AppCompatImageView {
     @Override
     protected void onDraw(Canvas canvas) {
         if(chakraFragment != null) {
-            RelativeLayout.LayoutParams whiteLightLayoutParams = (RelativeLayout.LayoutParams) chakraFragment.getWhiteLight().getLayoutParams();
-            chakraFragment.getWhiteLight().setLayoutParams(whiteLightLayoutParams);
+            RelativeLayout.LayoutParams sahasraraLayoutParams = (RelativeLayout.LayoutParams) chakraFragment.getSahasraraLight().getLayoutParams();
+            chakraFragment.getSahasraraLight().setLayoutParams(sahasraraLayoutParams);
         }
         else if(kriyaFragment != null) {
             RelativeLayout.LayoutParams starLayoutParams = (RelativeLayout.LayoutParams) kriyaFragment.getStar().getLayoutParams();

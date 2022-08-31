@@ -19,55 +19,55 @@
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/white_light"
+            android:src="@drawable/ajna"
             android:layout_alignParentBottom="true"
-            android:id="@+id/whiteLight"
+            android:id="@+id/sahasraraLight"
             android:layout_centerHorizontal="true"
             android:contentDescription="@string/muladhara"/>
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/indigo_light"
+            android:src="@drawable/vishuddi"
             android:layout_alignParentBottom="true"
-            android:id="@+id/indigoLight"
+            android:id="@+id/vishuddiLight"
             android:layout_centerHorizontal="true"
             android:contentDescription="@string/swadhisthana"/>
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/blue_light"
+            android:src="@drawable/anahata"
             android:layout_alignParentBottom="true"
-            android:id="@+id/blueLight"
+            android:id="@+id/anahataLight"
             android:layout_centerHorizontal="true"
             android:contentDescription="@string/manipura"/>
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/red_light"
+            android:src="@drawable/manipura"
             android:layout_alignParentBottom="true"
-            android:id="@+id/redLight"
+            android:id="@+id/manipuraLight"
             android:layout_centerHorizontal="true"
             android:contentDescription="@string/anahata"/>
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/silver_light"
+            android:src="@drawable/swadhisthana"
             android:layout_alignParentBottom="true"
-            android:id="@+id/silverLight"
+            android:id="@+id/swadhisthanaLight"
             android:layout_centerHorizontal="true"
             android:contentDescription="@string/vishuddi"/>
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/gold_light"
+            android:src="@drawable/muladhara"
             android:layout_alignParentBottom="true"
-            android:id="@+id/goldLight"
+            android:id="@+id/muladharaLight"
             android:layout_centerHorizontal="true"
             android:contentDescription="@string/ajna"/>
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/multi_color_light"
+            android:src="@drawable/sahashrara"
             android:layout_alignParentBottom="true"
             android:id="@+id/multiColorLight"
             android:layout_centerHorizontal="true"

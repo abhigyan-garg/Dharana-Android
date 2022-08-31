@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Abhigyan Garg/OneDrive - University of Waterloo/Desktop/Projects/Dharana/DharanaBLEAndroidProject/app/src/main/res/drawable/ajna.xml" value="0.2125" />
+        <entry key="..\:/Users/Abhigyan Garg/OneDrive - University of Waterloo/Desktop/Projects/Dharana/DharanaBLEAndroidProject/app/src/main/res/drawable/anahata.xml" value="0.2125" />
         <entry key="..\:/Users/Abhigyan Garg/OneDrive - University of Waterloo/Desktop/Projects/Dharana/DharanaBLEAndroidProject/app/src/main/res/drawable/gold_light.xml" value="0.2125" />
+        <entry key="..\:/Users/Abhigyan Garg/OneDrive - University of Waterloo/Desktop/Projects/Dharana/DharanaBLEAndroidProject/app/src/main/res/drawable/indigo_light.xml" value="0.2125" />
+        <entry key="..\:/Users/Abhigyan Garg/OneDrive - University of Waterloo/Desktop/Projects/Dharana/DharanaBLEAndroidProject/app/src/main/res/drawable/manipura.xml" value="0.2125" />
+        <entry key="..\:/Users/Abhigyan Garg/OneDrive - University of Waterloo/Desktop/Projects/Dharana/DharanaBLEAndroidProject/app/src/main/res/drawable/swadhisthana.xml" value="0.2125" />
+        <entry key="..\:/Users/Abhigyan Garg/OneDrive - University of Waterloo/Desktop/Projects/Dharana/DharanaBLEAndroidProject/app/src/main/res/drawable/vishuddi.xml" value="0.2125" />
         <entry key="..\:/Users/Abhigyan Garg/OneDrive - University of Waterloo/Desktop/Projects/Dharana/DharanaBLEAndroidProject/app/src/main/res/layout/activity_login.xml" value="0.12760416666666666" />
         <entry key="..\:/Users/Abhigyan Garg/OneDrive - University of Waterloo/Desktop/Projects/Dharana/DharanaBLEAndroidProject/app/src/main/res/layout/activity_main.xml" value="0.12760416666666666" />
         <entry key="..\:/Users/Abhigyan Garg/OneDrive - University of Waterloo/Desktop/Projects/Dharana/DharanaBLEAndroidProject/app/src/main/res/layout/bluetooth_device.xml" value="0.12760416666666666" />
