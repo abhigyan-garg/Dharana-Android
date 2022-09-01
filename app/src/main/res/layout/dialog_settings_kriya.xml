@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="300dp"
+    android:layout_width="330dp"
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
     android:layout_height="wrap_content"
@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
-                android:text="Up Time: "
+                android:text="Up Time (Inhale): "
                 android:textSize="18sp" />
             <EditText
                 android:layout_width="80dp"
@@ -78,65 +78,78 @@
         </RelativeLayout>
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Down Time:"
-                android:layout_centerVertical="true"
                 android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:text="Down Time\n(Exhale):"
                 android:textSize="18sp" />
-            <EditText
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:id="@+id/downField"
-                android:text="10"
-                android:gravity="center"
-                android:layout_centerVertical="true"
-                android:layout_toStartOf="@+id/downSeconds"
-                android:textSize="18sp"/>
-            <TextView
+
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/seconds"
-                android:id="@+id/downSeconds"
-                android:layout_centerVertical="true"
                 android:layout_alignParentEnd="true"
-                android:textSize="18sp"/>
+                android:layout_alignParentBottom="true">
+                <EditText
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:id="@+id/downField"
+                    android:text="10"
+                    android:gravity="center"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:id="@+id/downSeconds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/downField"
+                    android:text="@string/seconds"
+                    android:textSize="18sp" />
+            </RelativeLayout>
         </RelativeLayout>
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Bottom \nHold Time:"
-                android:gravity="center_horizontal"
-                android:lines="2"
-                android:layout_centerVertical="true"
                 android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:text="Bottom \nHold Time:"
                 android:textSize="18sp" />
-            <EditText
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:id="@+id/bottomHoldField"
-                android:text="5"
-                android:gravity="center"
-                android:layout_centerVertical="true"
-                android:layout_toStartOf="@+id/bottomHoldSeconds"
-                android:textSize="18sp"/>
 
-            <TextView
-                android:id="@+id/bottomHoldSeconds"
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:text="@string/seconds"
-                android:textSize="18sp" />
+                android:layout_alignParentBottom="true">
+
+                <EditText
+                    android:id="@+id/bottomHoldField"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:inputType="numberDecimal"
+                    android:text="5"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/bottomHoldSeconds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/bottomHoldField"
+                    android:text="@string/seconds"
+                    android:textSize="18sp" />
+            </RelativeLayout>
         </RelativeLayout>
     </LinearLayout>
 
