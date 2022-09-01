@@ -41,7 +41,7 @@ public class KriyaFragment extends Fragment {
     private Handler handler;
     private Runnable runnable;
     private PerfectLoopMediaPlayer mediaPlayer;
-    private boolean woman = true;
+    private boolean woman = false;
     private int volume = 1;
     private boolean loaded = false;
 

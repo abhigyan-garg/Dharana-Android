@@ -6,12 +6,13 @@
     android:orientation="vertical"
     android:id="@+id/kriyaFragmentLayout"
     tools:context=".fragments.KriyaFragment">
+
     <com.example.dharana.CropImageView
+        android:id="@+id/background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/ic_kriya_background_female"
-        android:id="@+id/background"
-        android:scaleType="matrix" />
+        android:scaleType="matrix"
+        android:src="@drawable/ic_kriya_background_male" />
     <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -38,16 +39,17 @@
             android:layout_alignParentStart="true"
             android:layout_marginStart="10dp"
             android:id="@+id/startButton" />
+
         <ImageButton
+            android:id="@+id/genderButton"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_toStartOf="@+id/settingsButton"
-            android:background="@drawable/ic_woman"
-            android:id="@+id/genderButton"
             android:layout_centerVertical="true"
-            android:backgroundTint= "@drawable/image_button"
             android:layout_marginEnd="10dp"
-            android:contentDescription="@string/change_gender_button"/>
+            android:layout_toStartOf="@+id/settingsButton"
+            android:background="@drawable/ic_man"
+            android:backgroundTint="@drawable/image_button"
+            android:contentDescription="@string/change_gender_button" />
         <ImageButton
             android:layout_width="40dp"
             android:layout_height="40dp"
