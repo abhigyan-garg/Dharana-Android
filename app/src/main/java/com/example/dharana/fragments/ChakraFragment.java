@@ -31,13 +31,13 @@ import java.util.Collections;
 public class ChakraFragment extends Fragment {
     private ChakraSettingsDialog chakraSettingsDialog;
     private CropImageView background;
-    private ImageView sahasraraLight;
+    private ImageView ajnaLight;
     private ImageView vishuddiLight;
     private ImageView anahataLight;
     private ImageView manipuraLight;
     private ImageView swadhisthanaLight;
     private ImageView muladharaLight;
-    private ImageView multiColorLight;
+    private ImageView sahasraraLight;
     private RelativeLayout buttonsLayout;
     private RelativeLayout lightsLayout;
     private RelativeLayout chakraFragmentLayout;
@@ -66,14 +66,15 @@ public class ChakraFragment extends Fragment {
     private String muladharaTime = "2";
     private int next = 0;
 
-    private final float sahasraraHeight = 0.6347777754f;
+    private final float sahasraraHeight = 0.5321904723f;
     private final float ajnaHeight = 0.575243384f;
     private final float vishuddiHeight = 0.4848095212f;
     private final float anahataHeight = 0.382407405f;
     private final float manipuraHeight = 0.2704814792f;
     private final float swadhisthanaHeight = 0.1847883573f;
     private final float muladharaHeight = 0.1252645478f;
-    private final float width = 0.0571957677f;
+    private final float chakraWidth = 0.0571957677f;
+    private final float sahasraraWidth = 0.2687830708f;
 
     public ChakraFragment(MainActivity activity) {
         this.activity = activity;
@@ -108,13 +109,13 @@ public class ChakraFragment extends Fragment {
         musicButton = view.findViewById(R.id.musicButton);
         settingsButton = view.findViewById(R.id.settingsButton);
         background = view.findViewById(R.id.background);
-        sahasraraLight = view.findViewById(R.id.sahasraraLight);
+        ajnaLight = view.findViewById(R.id.ajnaLight);
         vishuddiLight = view.findViewById(R.id.vishuddiLight);
         anahataLight = view.findViewById(R.id.anahataLight);
         manipuraLight = view.findViewById(R.id.manipuraLight);
         swadhisthanaLight = view.findViewById(R.id.swadhisthanaLight);
         muladharaLight = view.findViewById(R.id.muladharaLight);
-        multiColorLight = view.findViewById(R.id.multiColorLight);
+        sahasraraLight = view.findViewById(R.id.sahasraraLight);
         buttonsLayout = view.findViewById(R.id.buttonsLayout);
         lightsLayout = view.findViewById(R.id.lightsLayout);
         chakraFragmentLayout = view.findViewById(R.id.chakraFragmentLayout);
@@ -158,13 +159,13 @@ public class ChakraFragment extends Fragment {
                 if(runnable != null) {
                     handler.removeCallbacks(runnable);
                 }
-                ((TransitionDrawable) sahasraraLight.getDrawable()).resetTransition();
+                ((TransitionDrawable) ajnaLight.getDrawable()).resetTransition();
                 ((TransitionDrawable) vishuddiLight.getDrawable()).resetTransition();
                 ((TransitionDrawable) anahataLight.getDrawable()).resetTransition();
                 ((TransitionDrawable) manipuraLight.getDrawable()).resetTransition();
                 ((TransitionDrawable) swadhisthanaLight.getDrawable()).resetTransition();
                 ((TransitionDrawable) muladharaLight.getDrawable()).resetTransition();
-                ((TransitionDrawable)multiColorLight.getDrawable()).resetTransition();
+                ((TransitionDrawable) sahasraraLight.getDrawable()).resetTransition();
                 if(activeStream != null)
                     soundPool.stop(activeStream);
                 startButton.setText("Start");
@@ -259,9 +260,9 @@ public class ChakraFragment extends Fragment {
                                 if(Float.parseFloat(ajnaTime)>0) {
                                     activity.setMotor(next + 1, true);
                                     if (Float.parseFloat(ajnaTime) < 1)
-                                        ((TransitionDrawable) sahasraraLight.getDrawable()).startTransition(Math.round((Float.parseFloat(ajnaTime) * 1000 / 2)));
+                                        ((TransitionDrawable) ajnaLight.getDrawable()).startTransition(Math.round((Float.parseFloat(ajnaTime) * 1000 / 2)));
                                     else
-                                        ((TransitionDrawable) sahasraraLight.getDrawable()).startTransition(Math.min(1000, Math.round((Float.parseFloat(ajnaTime) * 1000 / 2))));
+                                        ((TransitionDrawable) ajnaLight.getDrawable()).startTransition(Math.min(1000, Math.round((Float.parseFloat(ajnaTime) * 1000 / 2))));
 
                                     if(Double.parseDouble(ajnaTime) >= 1)
                                         activeStream = soundPool.play(om, volume, volume, 1, max(0, (int) Math.floor(Double.parseDouble(ajnaTime) / 2) - 1), 1);
@@ -273,9 +274,9 @@ public class ChakraFragment extends Fragment {
                                 if(Float.parseFloat(sahasraraTime)>0) {
                                     activity.setMotor(next + 1, true);
                                     if (Float.parseFloat(sahasraraTime) < 1)
-                                        ((TransitionDrawable) multiColorLight.getDrawable()).startTransition(Math.round((Float.parseFloat(sahasraraTime) * 1000 / 2)));
+                                        ((TransitionDrawable) sahasraraLight.getDrawable()).startTransition(Math.round((Float.parseFloat(sahasraraTime) * 1000 / 2)));
                                     else
-                                        ((TransitionDrawable) multiColorLight.getDrawable()).startTransition(Math.min(1000, Math.round((Float.parseFloat(sahasraraTime) * 1000 / 2))));
+                                        ((TransitionDrawable) sahasraraLight.getDrawable()).startTransition(Math.min(1000, Math.round((Float.parseFloat(sahasraraTime) * 1000 / 2))));
 
                                     if(Double.parseDouble(sahasraraTime) >= 1)
                                         activeStream = soundPool.play(om, volume, volume, 1, max(0, (int) Math.floor(Double.parseDouble(sahasraraTime) / 2) - 1), 1);
@@ -293,9 +294,9 @@ public class ChakraFragment extends Fragment {
                                 float max = Collections.max(Arrays.asList(new Float[]{Float.valueOf(sahasraraTime), Float.valueOf(ajnaTime), Float.valueOf(vishuddiTime), Float.valueOf(anahataTime), Float.valueOf(manipuraTime), Float.valueOf(swadhisthanaTime), Float.valueOf(muladharaTime)}));
                                 int reverseTime = Math.round(Math.min(max*1000, 1250f));
                                 if(Float.parseFloat(sahasraraTime)>0)
-                                    ((TransitionDrawable)multiColorLight.getDrawable()).reverseTransition(Math.round(reverseTime*3/5));
-                                if(Float.parseFloat(ajnaTime)>0)
                                     ((TransitionDrawable) sahasraraLight.getDrawable()).reverseTransition(Math.round(reverseTime*3/5));
+                                if(Float.parseFloat(ajnaTime)>0)
+                                    ((TransitionDrawable) ajnaLight.getDrawable()).reverseTransition(Math.round(reverseTime*3/5));
                                 if(Float.parseFloat(vishuddiTime)>0)
                                     ((TransitionDrawable) vishuddiLight.getDrawable()).reverseTransition(Math.round(reverseTime*3/5));
                                 if(Float.parseFloat(anahataTime)>0)
@@ -338,47 +339,47 @@ public class ChakraFragment extends Fragment {
     }
 
     public void setupLights(float verticalHeight) {
-        RelativeLayout.LayoutParams sahasraraLightLayoutParams = (RelativeLayout.LayoutParams) sahasraraLight.getLayoutParams();
-        sahasraraLightLayoutParams.width = Math.round(width * verticalHeight);
-        sahasraraLightLayoutParams.height = Math.round(width * verticalHeight);
-        sahasraraLightLayoutParams.bottomMargin = Math.round(verticalHeight * ajnaHeight);
-        sahasraraLight.setLayoutParams(sahasraraLightLayoutParams);
+        RelativeLayout.LayoutParams ajnaLightLayoutParams = (RelativeLayout.LayoutParams) ajnaLight.getLayoutParams();
+        ajnaLightLayoutParams.width = Math.round(chakraWidth * verticalHeight);
+        ajnaLightLayoutParams.height = Math.round(chakraWidth * verticalHeight);
+        ajnaLightLayoutParams.bottomMargin = Math.round(verticalHeight * ajnaHeight);
+        ajnaLight.setLayoutParams(ajnaLightLayoutParams);
 
         RelativeLayout.LayoutParams vishuddiLightLayoutParams = (RelativeLayout.LayoutParams) vishuddiLight.getLayoutParams();
-        vishuddiLightLayoutParams.width = Math.round(width * verticalHeight);
-        vishuddiLightLayoutParams.height = Math.round(width * verticalHeight);
+        vishuddiLightLayoutParams.width = Math.round(chakraWidth * verticalHeight);
+        vishuddiLightLayoutParams.height = Math.round(chakraWidth * verticalHeight);
         vishuddiLightLayoutParams.bottomMargin = Math.round(verticalHeight * vishuddiHeight);
         vishuddiLight.setLayoutParams(vishuddiLightLayoutParams);
 
         RelativeLayout.LayoutParams anahataLightLayoutParams = (RelativeLayout.LayoutParams) anahataLight.getLayoutParams();
-        anahataLightLayoutParams.width = Math.round(width * verticalHeight);
-        anahataLightLayoutParams.height = Math.round(width * verticalHeight);
+        anahataLightLayoutParams.width = Math.round(chakraWidth * verticalHeight);
+        anahataLightLayoutParams.height = Math.round(chakraWidth * verticalHeight);
         anahataLightLayoutParams.bottomMargin = Math.round(verticalHeight * anahataHeight);
         anahataLight.setLayoutParams(anahataLightLayoutParams);
 
         RelativeLayout.LayoutParams manipuraLightLayoutParams = (RelativeLayout.LayoutParams) manipuraLight.getLayoutParams();
-        manipuraLightLayoutParams.width = Math.round(width * verticalHeight);
-        manipuraLightLayoutParams.height = Math.round(width * verticalHeight);
+        manipuraLightLayoutParams.width = Math.round(chakraWidth * verticalHeight);
+        manipuraLightLayoutParams.height = Math.round(chakraWidth * verticalHeight);
         manipuraLightLayoutParams.bottomMargin = Math.round(verticalHeight * manipuraHeight);
         manipuraLight.setLayoutParams(manipuraLightLayoutParams);
 
         RelativeLayout.LayoutParams swadhisthanaLightLayoutParams = (RelativeLayout.LayoutParams) swadhisthanaLight.getLayoutParams();
-        swadhisthanaLightLayoutParams.width = Math.round(width * verticalHeight);
-        swadhisthanaLightLayoutParams.height = Math.round(width * verticalHeight);
+        swadhisthanaLightLayoutParams.width = Math.round(chakraWidth * verticalHeight);
+        swadhisthanaLightLayoutParams.height = Math.round(chakraWidth * verticalHeight);
         swadhisthanaLightLayoutParams.bottomMargin = Math.round(verticalHeight * swadhisthanaHeight);
         swadhisthanaLight.setLayoutParams(swadhisthanaLightLayoutParams);
 
         RelativeLayout.LayoutParams muladharaLightLayoutParams = (RelativeLayout.LayoutParams) muladharaLight.getLayoutParams();
-        muladharaLightLayoutParams.width = Math.round(width * verticalHeight);
-        muladharaLightLayoutParams.height = Math.round(width * verticalHeight);
+        muladharaLightLayoutParams.width = Math.round(chakraWidth * verticalHeight);
+        muladharaLightLayoutParams.height = Math.round(chakraWidth * verticalHeight);
         muladharaLightLayoutParams.bottomMargin = Math.round(verticalHeight * muladharaHeight);
         muladharaLight.setLayoutParams(muladharaLightLayoutParams);
 
-        RelativeLayout.LayoutParams multiColorLightLayoutParams = (RelativeLayout.LayoutParams) multiColorLight.getLayoutParams();
-        multiColorLightLayoutParams.width = Math.round(width * verticalHeight);
-        multiColorLightLayoutParams.height = Math.round(width * verticalHeight);
-        multiColorLightLayoutParams.bottomMargin = Math.round(verticalHeight * sahasraraHeight);
-        multiColorLight.setLayoutParams(multiColorLightLayoutParams);
+        RelativeLayout.LayoutParams sahasraraLightLayoutParams = (RelativeLayout.LayoutParams) sahasraraLight.getLayoutParams();
+        sahasraraLightLayoutParams.width = Math.round(sahasraraWidth * verticalHeight);
+        sahasraraLightLayoutParams.height = Math.round(sahasraraWidth * verticalHeight);
+        sahasraraLightLayoutParams.bottomMargin = Math.round(verticalHeight * sahasraraHeight);
+        sahasraraLight.setLayoutParams(sahasraraLightLayoutParams);
     }
 
 
@@ -387,8 +388,8 @@ public class ChakraFragment extends Fragment {
             startButton.callOnClick();
     }
 
-    public ImageView getSahasraraLight() {
-        return sahasraraLight;
+    public ImageView getAjnaLight() {
+        return ajnaLight;
     }
 
     public String getAllTime() {
