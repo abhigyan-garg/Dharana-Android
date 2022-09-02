@@ -180,8 +180,8 @@ public class ChakraFragment extends Fragment {
                     else
                         ((TransitionDrawable) muladharaLight.getDrawable()).startTransition(Math.min(1000, Math.round((Float.parseFloat(muladharaTime) * 1000 / 2))));
 
-                    if(Double.parseDouble(muladharaTime) >= 1)
-                        activeStream = soundPool.play(lam, volume, volume, 1, max(0, (int) Math.floor(Double.parseDouble(muladharaTime) / 2) - 1), 1);
+                    if(Double.parseDouble(muladharaTime) >= 0.8)
+                        activeStream = soundPool.play(lam, volume, volume, 1, max(0, (int) Math.floor(Double.parseDouble(muladharaTime) / 0.8) - 1), 1);
                 }
                 runnable = new Runnable() {
                     public void run() {
@@ -194,8 +194,8 @@ public class ChakraFragment extends Fragment {
                                     else
                                         ((TransitionDrawable) muladharaLight.getDrawable()).startTransition(Math.min(1000, Math.round((Float.parseFloat(muladharaTime) * 1000 / 2))));
 
-                                    if(Double.parseDouble(muladharaTime) >= 1)
-                                        activeStream = soundPool.play(lam, volume, volume, 1, max(0, (int) Math.floor(Double.parseDouble(muladharaTime) / 2) - 1), 1);
+                                    if(Double.parseDouble(muladharaTime) >= 0.8)
+                                        activeStream = soundPool.play(lam, volume, volume, 1, max(0, (int) Math.floor(Double.parseDouble(muladharaTime) / 0.8) - 1), 1);
                                 }
                                 next++;
                                 handler.postDelayed(runnable, Math.round(Double.parseDouble(muladharaTime)*1000));
@@ -208,8 +208,8 @@ public class ChakraFragment extends Fragment {
                                     else
                                         ((TransitionDrawable) swadhisthanaLight.getDrawable()).startTransition(Math.min(1000, Math.round((Float.parseFloat(swadhisthanaTime) * 1000 / 2))));
 
-                                    if(Double.parseDouble(swadhisthanaTime) >= 1)
-                                        activeStream = soundPool.play(vam, volume, volume, 1, max(0, (int) Math.floor(Double.parseDouble(swadhisthanaTime) / 2) - 1), 1);
+                                    if(Double.parseDouble(swadhisthanaTime) >= 0.8)
+                                        activeStream = soundPool.play(vam, volume, volume, 1, max(0, (int) Math.floor(Double.parseDouble(swadhisthanaTime) / 0.8) - 1), 1);
                                     }
                                 next++;
                                 handler.postDelayed(runnable, Math.round(Double.parseDouble(swadhisthanaTime)*1000));
@@ -222,8 +222,8 @@ public class ChakraFragment extends Fragment {
                                     else
                                         ((TransitionDrawable) manipuraLight.getDrawable()).startTransition(Math.min(1000, Math.round((Float.parseFloat(manipuraTime) * 1000 / 2))));
 
-                                    if(Double.parseDouble(manipuraTime) >= 1)
-                                        activeStream = soundPool.play(ram, volume, volume, 1, max(0, (int) Math.floor(Double.parseDouble(manipuraTime) / 2) - 1), 1);
+                                    if(Double.parseDouble(manipuraTime) >= 0.8)
+                                        activeStream = soundPool.play(ram, volume, volume, 1, max(0, (int) Math.floor(Double.parseDouble(manipuraTime) / 0.8) - 1), 1);
                                 }
                                 next++;
                                 handler.postDelayed(runnable, Math.round(Double.parseDouble(manipuraTime)*1000));
@@ -236,8 +236,8 @@ public class ChakraFragment extends Fragment {
                                     else
                                         ((TransitionDrawable) anahataLight.getDrawable()).startTransition(Math.min(1000, Math.round((Float.parseFloat(anahataTime) * 1000 / 2))));
 
-                                    if(Double.parseDouble(anahataTime) >= 1)
-                                        activeStream = soundPool.play(yam, volume, volume, 1, max(0, (int) Math.floor(Double.parseDouble(anahataTime) / 2) - 1), 1);
+                                    if(Double.parseDouble(anahataTime) >= 0.8)
+                                        activeStream = soundPool.play(yam, volume, volume, 1, max(0, (int) Math.floor(Double.parseDouble(anahataTime) / 0.8) - 1), 1);
                                 }
                                 next++;
                                 handler.postDelayed(runnable, Math.round(Double.parseDouble(anahataTime)*1000));
@@ -250,8 +250,8 @@ public class ChakraFragment extends Fragment {
                                     else
                                         ((TransitionDrawable) vishuddiLight.getDrawable()).startTransition(Math.min(1000, Math.round((Float.parseFloat(vishuddiTime) * 1000 / 2))));
 
-                                    if(Double.parseDouble(vishuddiTime) >= 1)
-                                        activeStream = soundPool.play(ham, volume, volume, 1, max(0, (int) Math.floor(Double.parseDouble(vishuddiTime) / 2) - 1), 1);
+                                    if(Double.parseDouble(vishuddiTime) >= 0.8)
+                                        activeStream = soundPool.play(ham, volume, volume, 1, max(0, (int) Math.floor(Double.parseDouble(vishuddiTime) / 0.8) - 1), 1);
                                 }
                                 next++;
                                 handler.postDelayed(runnable, Math.round(Double.parseDouble(vishuddiTime)*1000));
@@ -264,8 +264,8 @@ public class ChakraFragment extends Fragment {
                                     else
                                         ((TransitionDrawable) ajnaLight.getDrawable()).startTransition(Math.min(1000, Math.round((Float.parseFloat(ajnaTime) * 1000 / 2))));
 
-                                    if(Double.parseDouble(ajnaTime) >= 1)
-                                        activeStream = soundPool.play(om, volume, volume, 1, max(0, (int) Math.floor(Double.parseDouble(ajnaTime) / 2) - 1), 1);
+                                    if(Double.parseDouble(ajnaTime) >= 0.8)
+                                        activeStream = soundPool.play(om, volume, volume, 1, max(0, (int) Math.floor(Double.parseDouble(ajnaTime) / 0.8) - 1), 1);
                                 }
                                 next++;
                                 handler.postDelayed(runnable, Math.round(Double.parseDouble(ajnaTime)*1000));
@@ -278,8 +278,8 @@ public class ChakraFragment extends Fragment {
                                     else
                                         ((TransitionDrawable) sahasraraLight.getDrawable()).startTransition(Math.min(1000, Math.round((Float.parseFloat(sahasraraTime) * 1000 / 2))));
 
-                                    if(Double.parseDouble(sahasraraTime) >= 1)
-                                        activeStream = soundPool.play(om, volume, volume, 1, max(0, (int) Math.floor(Double.parseDouble(sahasraraTime) / 2) - 1), 1);
+                                    if(Double.parseDouble(sahasraraTime) >= 0.8)
+                                        activeStream = soundPool.play(om, volume, volume, 1, max(0, (int) Math.floor(Double.parseDouble(sahasraraTime) / 0.8) - 1), 1);
                                 }
                                 next++;
                                 handler.postDelayed(runnable, Math.round(Double.parseDouble(sahasraraTime)*1000));
