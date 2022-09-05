@@ -45,10 +45,9 @@ public class KriyaFragment extends Fragment {
     private int volume = 1;
     private boolean loaded = false;
 
-    private final float pipeWidth = 115f/2039f;
-    private final float starWidth = 325f/512f;
-    private final float starMargin = 0.1727792893f;
-    private final float starHeight = 103f/512f;
+    private final float starImageWidth = 0.088520014f;
+    private final float starRise = 476/1024f;
+    private final float starHeight = 0.161f;
 
     private String upTime = "5";
     private String topHoldTime = "10";
@@ -205,15 +204,15 @@ public class KriyaFragment extends Fragment {
 
 
     public void setupStar(float verticalHeight, float horizontalWidth) {
+        float widthAndHeight = horizontalWidth * starImageWidth;
         RelativeLayout.LayoutParams starLayoutParams = (RelativeLayout.LayoutParams) star.getLayoutParams();
-        int bottomMargin = Math.round(verticalHeight * starMargin - horizontalWidth * pipeWidth * starHeight);
+        int bottomMargin = Math.round(verticalHeight * starHeight);
         starLayoutParams.bottomMargin = bottomMargin;
         this.bottomMargin = bottomMargin;
-        final double width = Math.floor(horizontalWidth * pipeWidth / starWidth);
-        starLayoutParams.width = (int) width;
-        starLayoutParams.height = (int) width;
+        starLayoutParams.width = Math.round(widthAndHeight);
+        starLayoutParams.height = Math.round(widthAndHeight);
         star.setLayoutParams(starLayoutParams);
-        rise = verticalHeight * (322f/525f - starMargin);
+        rise = verticalHeight * starRise;
     }
 
     public void switchedTo() {
