@@ -64,6 +64,7 @@ public class ChakraFragment extends Fragment {
     private String manipuraTime = "2";
     private String swadhisthanaTime = "2";
     private String muladharaTime = "2";
+    private String pauseTime = "3";
     private int next = 0;
 
     private final float sahasraraHeight = 0.5321904723f;
@@ -291,23 +292,23 @@ public class ChakraFragment extends Fragment {
                                 break;
                             case 8:
                                 next = 0;
-                                float max = Collections.max(Arrays.asList(new Float[]{Float.valueOf(sahasraraTime), Float.valueOf(ajnaTime), Float.valueOf(vishuddiTime), Float.valueOf(anahataTime), Float.valueOf(manipuraTime), Float.valueOf(swadhisthanaTime), Float.valueOf(muladharaTime)}));
-                                int reverseTime = Math.round(Math.min(max*1000, 1250f));
+                                float pause = Float.parseFloat(pauseTime);
+                                int reverseTime = Math.round(Math.min(pause*1000, 1000f));
                                 if(Float.parseFloat(sahasraraTime)>0)
-                                    ((TransitionDrawable) sahasraraLight.getDrawable()).reverseTransition(Math.round(reverseTime*3/5));
+                                    ((TransitionDrawable) sahasraraLight.getDrawable()).reverseTransition(reverseTime);
                                 if(Float.parseFloat(ajnaTime)>0)
-                                    ((TransitionDrawable) ajnaLight.getDrawable()).reverseTransition(Math.round(reverseTime*3/5));
+                                    ((TransitionDrawable) ajnaLight.getDrawable()).reverseTransition(reverseTime);
                                 if(Float.parseFloat(vishuddiTime)>0)
-                                    ((TransitionDrawable) vishuddiLight.getDrawable()).reverseTransition(Math.round(reverseTime*3/5));
+                                    ((TransitionDrawable) vishuddiLight.getDrawable()).reverseTransition(reverseTime);
                                 if(Float.parseFloat(anahataTime)>0)
-                                    ((TransitionDrawable) anahataLight.getDrawable()).reverseTransition(Math.round(reverseTime*3/5));
+                                    ((TransitionDrawable) anahataLight.getDrawable()).reverseTransition(reverseTime);
                                 if(Float.parseFloat(manipuraTime)>0)
-                                    ((TransitionDrawable) manipuraLight.getDrawable()).reverseTransition(Math.round(reverseTime*3/5));
+                                    ((TransitionDrawable) manipuraLight.getDrawable()).reverseTransition(reverseTime);
                                 if(Float.parseFloat(swadhisthanaTime)>0)
-                                    ((TransitionDrawable) swadhisthanaLight.getDrawable()).reverseTransition(Math.round(reverseTime*3/5));
+                                    ((TransitionDrawable) swadhisthanaLight.getDrawable()).reverseTransition(reverseTime);
                                 if(Float.parseFloat(muladharaTime)>0)
-                                    ((TransitionDrawable) muladharaLight.getDrawable()).reverseTransition(Math.round(reverseTime*3/5));
-                                handler.postDelayed(runnable, reverseTime);
+                                    ((TransitionDrawable) muladharaLight.getDrawable()).reverseTransition(reverseTime);
+                                handler.postDelayed(runnable, Math.round(pause * 1000));
                         }
                     }
                 };
@@ -424,6 +425,10 @@ public class ChakraFragment extends Fragment {
         return muladharaTime;
     }
 
+    public String getPauseTime() {
+        return pauseTime;
+    }
+
     public void setAllTime(String allTime) {
         this.allTime = allTime;
     }
@@ -454,5 +459,9 @@ public class ChakraFragment extends Fragment {
 
     public void setMuladharaTime(String muladharaTime) {
         this.muladharaTime = muladharaTime;
+    }
+
+    public void setPauseTime(String pauseTime) {
+        this.pauseTime = pauseTime;
     }
 }

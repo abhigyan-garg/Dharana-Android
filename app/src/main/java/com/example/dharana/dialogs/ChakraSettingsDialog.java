@@ -31,6 +31,7 @@ public class ChakraSettingsDialog extends Dialog {
     private final EditText swadhisthanaField;
     private final EditText muladharaField;
     private final EditText allField;
+    private final EditText pauseField;
 
     private final Button cancelButton;
     private final Button setButton;
@@ -56,6 +57,7 @@ public class ChakraSettingsDialog extends Dialog {
         swadhisthanaField = findViewById(R.id.swadhisthanaField);
         muladharaField = findViewById(R.id.muladharaField);
         allField = findViewById(R.id.allField);
+        pauseField = findViewById(R.id.pauseField);
         cancelButton = findViewById(R.id.cancelButton);
         setButton = findViewById(R.id.setButton);
         resetButton = findViewById(R.id.resetButton);
@@ -74,6 +76,7 @@ public class ChakraSettingsDialog extends Dialog {
         swadhisthanaField.setFilters(new InputFilter[] {new DecimalPlaceFilter()});
         muladharaField.setFilters(new InputFilter[] {new DecimalPlaceFilter()});
         allField.setFilters(new InputFilter[] {new DecimalPlaceFilter()});
+        pauseField.setFilters(new InputFilter[] {new DecimalPlaceFilter()});
 
         individualToggle.setOnCheckedChangeListener((compoundButton, checked) -> {
             if(checked) {
@@ -103,6 +106,7 @@ public class ChakraSettingsDialog extends Dialog {
             swadhisthanaField.setText(chakraFragment.getSwadhisthanaTime());
             muladharaField.setText(chakraFragment.getMuladharaTime());
             allField.setText(chakraFragment.getMuladharaTime());
+            pauseField.setText(chakraFragment.getPauseTime());
             individualToggle.setChecked(modifyIndividualChakras);
             dismiss();
         });
@@ -117,6 +121,7 @@ public class ChakraSettingsDialog extends Dialog {
             swadhisthanaField.setText("2");
             muladharaField.setText("2");
             allField.setText("2");
+            pauseField.setText("3");
         });
 
         allField.addTextChangedListener(new TextWatcher() {
@@ -201,8 +206,13 @@ public class ChakraSettingsDialog extends Dialog {
                 Toast toast = Toast.makeText(getContext(), "Please enter the number of seconds for the chakras", Toast.LENGTH_LONG);
                 toast.show();
             }
+            else if(pauseField.getText().toString().equals("")) {
+                Toast toast = Toast.makeText(getContext(), "Please enter the number of seconds between chakras", Toast.LENGTH_LONG);
+                toast.show();
+            }
             else {
                 chakraFragment.setAllTime(holdField.getText().toString());
+                chakraFragment.setPauseTime(pauseField.getText().toString());
                 if(modifyIndividualChakras) {
                     chakraFragment.setSahasraraTime(sahasraraField.getText().toString());
                     chakraFragment.setAjnaTime(ajnaField.getText().toString());
