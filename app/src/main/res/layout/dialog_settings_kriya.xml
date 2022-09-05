@@ -24,16 +24,17 @@
                 android:layout_centerVertical="true"
                 android:text="Up Time (Inhale): "
                 android:textSize="18sp" />
+
             <EditText
+                android:id="@+id/upField"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:id="@+id/upField"
-                android:text="10"
-                android:gravity="center"
                 android:layout_centerVertical="true"
                 android:layout_toStartOf="@+id/upSeconds"
-                android:textSize="18sp"/>
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:text="5"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/upSeconds"
@@ -56,16 +57,17 @@
                 android:layout_centerVertical="true"
                 android:text="Top Hold Time:"
                 android:textSize="18sp" />
+
             <EditText
+                android:id="@+id/topHoldField"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:id="@+id/topHoldField"
-                android:text="5"
-                android:gravity="center"
                 android:layout_centerVertical="true"
                 android:layout_toStartOf="@+id/topHoldSeconds"
-                android:textSize="18sp"/>
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:text="10"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/topHoldSeconds"
@@ -94,14 +96,15 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true">
+
                 <EditText
+                    android:id="@+id/downField"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
-                    android:inputType="numberDecimal"
-                    android:id="@+id/downField"
-                    android:text="10"
                     android:gravity="center"
-                    android:textSize="18sp"/>
+                    android:inputType="numberDecimal"
+                    android:text="15"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/downSeconds"

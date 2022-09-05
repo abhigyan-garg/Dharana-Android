@@ -50,9 +50,9 @@ public class KriyaFragment extends Fragment {
     private final float starMargin = 0.1727792893f;
     private final float starHeight = 103f/512f;
 
-    private String upTime = "10";
-    private String topHoldTime = "5";
-    private String downTime = "10";
+    private String upTime = "5";
+    private String topHoldTime = "10";
+    private String downTime = "15";
     private String bottomHoldTime = "5";
 
     @Override
